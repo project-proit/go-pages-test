@@ -6,8 +6,8 @@ class StudentController
     async create(req, res, next) 
     {
         try{
-            const {typeOfLearning, fullName, age, city, scecialty, parentsName, phone, email,  url} = req.body
-            const student = await Student.create({typeOfLearning, fullName, age, city, scecialty, parentsName, phone, email,  url})
+            const {fullName, age, city, scecialty, parentsName, phone, email,  url} = req.body
+            const student = await Student.create({fullName, age, city, scecialty, parentsName, phone, email,  url})
             return res.json(student)
         } catch(e) {
             next(ApiError.badRequest(e.message))

@@ -3,11 +3,15 @@ const {DataTypes} = require('sequelize')
 
 const Student = sequelize.define('student',{
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    fio: {type: DataTypes.STRING, allowNull: false},
-    date: {type: DataTypes.STRING, allowNull: false},
-    parents_fio: {type: DataTypes.STRING, defaultValue: ""},
-    phone_number: {type: DataTypes.STRING, unique: true, allowNull: false},
+    fullName: {type: DataTypes.STRING, allowNull: false},
+    // typeOfLearning: {type: DataTypes.STRING, allowNull: false},
+    age: {type: DataTypes.STRING, allowNull: false},
+    city: {type: DataTypes.STRING, allowNull: false},
+    scecialty: {type: DataTypes.STRING, allowNull: false},
+    parentsName: {type: DataTypes.STRING, defaultValue: ""},
+    phone: {type: DataTypes.STRING, unique: true, allowNull: false},
     email: {type: DataTypes.STRING, unique: true, allowNull: false},
+    url: {type: DataTypes.STRING, unique: true, allowNull: false},
 })
 
 const Application = sequelize.define('application',{
